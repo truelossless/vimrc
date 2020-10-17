@@ -13,10 +13,17 @@ else
 	exit 1
 fi
 
+if ! command -v $1 &> /dev/null; then
+	echo "$1 not installed"
+	echo "Install vim with sudo apt install vim"
+	echo "Install neovim with sudo apt install neovim"
+	exit 1
+fi
+
 if ! command -v node &> /dev/null; then
 	echo "NodeJS is required"
 	echo "Install with curl -sL install-node.now.sh/lts | bash"
-	exit 1;
+	exit 1
 fi
 
 echo "Removing old vim files"

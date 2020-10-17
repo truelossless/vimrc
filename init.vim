@@ -77,6 +77,9 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 
+" On some vim installs features like popups are not supported
+let g:coc_disable_startup_warning = 1
+
 " Always show the signcolumn, otherwise it would shift the text each time
 if has("patch-8.1.1564")
   set signcolumn=number
