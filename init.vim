@@ -43,6 +43,9 @@ colorscheme ayu
 " Highlight cursor line
 set cursorline
 
+" Remove the pesky highlight
+nnoremap <silent> <C-c> :noh<return>
+
 " Status line
 set laststatus=2
 let g:airline_powerline_fonts = 1
@@ -54,11 +57,10 @@ set nofoldenable
 " Set Ctrl+P for fuzzy finding
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" Set Ctrl+F to open NERDTree
-map <C-n> :NERDTreeToggle<CR>
+" Set Ctrl+Z to open NERDTree
+map <silent> <C-z> :NERDTreeToggle<CR>
 
 " Auto start NERDTree if nothing is open
 autocmd StdinReadPre * let s:std_in=1

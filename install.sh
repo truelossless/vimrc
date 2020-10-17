@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ "$1" == "vim" ] && [ "$1" != "nvim" ]; then
+if [ "$1" == "vim" ]; then
 	VIMRC=~/.vimrc
 	VIMDIR=~/.vim
 	VIMPLUG=~/.vim/autoload/plug.vim
@@ -30,6 +30,4 @@ curl -sLo $VIMPLUG --create-dirs https://raw.githubusercontent.com/junegunn/vim-
 
 echo "Downloading plugins"
 $1 -c "PlugInstall" -c "qa"
-echo "Downloading langage extensions"
-$1 -c "CocUpdate" -c "qa"
 echo "All set !"
