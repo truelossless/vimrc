@@ -31,5 +31,5 @@ curl -sLo $VIMPLUG --create-dirs https://raw.githubusercontent.com/junegunn/vim-
 echo "Downloading plugins"
 $1 -c "PlugInstall" -c "qa"
 echo "Downloading langage extensions"
-$1 -c "CocInstall -sync coc-json coc-tsserver coc-html coc-rust-analyzer coc-clangd" -c "qa"
+$1 -c "CocUpdate" -c "qa"
 echo "All set !"

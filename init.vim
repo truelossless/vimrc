@@ -19,23 +19,19 @@ Plug 'ctrlpvim/ctrlp.vim'
 
 call plug#end()
 
-let g:coc_global_extensions = [		" Languages
-  					" ---------
-  \ 'coc-go',				" Go
-  \ 'coc-rust-analyzer',		" Rust
-  \ 'coc-clangd'			" C/C++
-  \ 'coc-css',				" Css
-  \ 'coc-html',				" Html
-  \ 'coc-json',				" Json
-  \ 'coc-phpls',			" Php
-  \ 'coc-tsserver',			" JavaScript / TypeScript
-  \ 'coc-vetur'				" Vue
-  \ 'coc-vimlsp',			" VimScript
-					"
-					" Misc
-					" ----
-  \ 'coc-pairs',			" Pair Completion
-  \ 'coc-prettier',			" JS/TS/Json/Css prettier
+let g:coc_global_extensions = [		
+  \ 'coc-go',
+  \ 'coc-rust-analyzer',
+  \ 'coc-clangd',
+  \ 'coc-css',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-phpls',
+  \ 'coc-tsserver',
+  \ 'coc-vetur',
+  \ 'coc-vimlsp',
+  \ 'coc-pairs',
+  \ 'coc-prettier',
   \ ]
 
 " Color scheme
