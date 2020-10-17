@@ -29,5 +29,5 @@ echo "Downloading plugin manager"
 curl -sLo $VIMPLUG --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 echo "Downloading plugins"
-$1 -c "PlugInstall" -c "qa"
+$1 -E -s -u ~/.vimrc +PlugInstall +qall
 echo "All set !"
