@@ -41,7 +41,7 @@ let g:coc_global_extensions = [
 set t_Co=256
 set termguicolors
 let ayucolor="dark"
-colorscheme ayu
+silent! colorscheme ayu
 
 " Highlight cursor line
 set cursorline
