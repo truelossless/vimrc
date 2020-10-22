@@ -14,19 +14,19 @@ else
 fi
 
 if ! command -v $1 &> /dev/null; then
-	echo "$1 not installed"
+	echo "Error: $1 not installed"
 	echo "Install vim with sudo apt install vim"
 	echo "Install neovim with sudo apt install neovim"
 	exit 1
 fi
 
 if ! command -v node &> /dev/null; then
-	echo "NodeJS is required"
+	echo "Error: NodeJS is not installed"
 	echo "Install with curl -sL install-node.now.sh/lts | bash"
 	exit 1
 fi
 
-echo "Removing old vim files"
+echo "Removing old $1 files"
 rm -rf $VIMRC $VIMDIR
 
 echo "Downloading config"
@@ -38,4 +38,3 @@ curl -sLo $VIMPLUG --create-dirs https://raw.githubusercontent.com/junegunn/vim-
 
 echo "Downloading plugins"
 $1 -E -s -u $VIMRC +PlugInstall +qall
-echo "All set !"
