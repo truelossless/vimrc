@@ -4,6 +4,9 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Git integration
+Plug 'tpope/vim-fugitive'
+
 " Tree
 Plug 'preservim/nerdtree'
 
@@ -38,10 +41,17 @@ let g:coc_global_extensions = [
 set t_Co=256
 set termguicolors
 let ayucolor="dark"
-silent! colorscheme ayu
+colorscheme ayu
 
 " Highlight cursor line
 set cursorline
+
+" Start in the right directory
+silent! cd %:h
+
+" Proper identation
+set tabstop=4
+set shiftwidth=4
 
 " Remove the pesky highlight
 nnoremap <silent> <C-c> :noh<return>
@@ -50,6 +60,14 @@ nnoremap <silent> <C-c> :noh<return>
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
+
+" Tab line
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" Change buffers with Tab
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 
 " Folding
 set nofoldenable
@@ -76,9 +94,6 @@ set nowritebackup
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
-
-" On some vim installs features like popups are not supported
-let g:coc_disable_startup_warning = 1
 
 " Always show the signcolumn, otherwise it would shift the text each time
 if has("patch-8.1.1564")

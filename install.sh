@@ -31,6 +31,7 @@ rm -rf $VIMRC $VIMDIR
 
 echo "Downloading config"
 curl -sLo $VIMRC --create-dirs https://raw.githubusercontent.com/truelossless/vimrc/master/init.vim
+curl -sLo $VIMRC --create-dirs https://raw.githubusercontent.com/truelossless/vimrc/master/coc-settings.json
 
 echo "Downloading plugin manager"
 curl -sLo $VIMPLUG --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
